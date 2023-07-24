@@ -1,0 +1,96 @@
+.table {
+    background-color: #F5E1B7;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.date {
+    margin-left: 22px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.row {
+    width: 100%;
+    height: auto;
+    display: flex;
+    border-radius: 20px;
+}
+
+.player-1,
+.player-2,
+.player-3,
+.player-4 {
+    height: auto;
+    margin: 0px 15px 0px 0px;
+    flex: 1;
+}
+
+.cards {
+    width: 60px;
+    height: 60px;
+    margin: 0px 15px 0px 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: solid 1px #DBC9A2;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-1,
+.player-2,
+.player-3,
+.player-4 {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: solid 1px #DBC9A2;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header {
+    /* background-color: #F5E1B7; */
+    width: 100%;
+    height: 60px;
+    display: flex;
+    border-radius: 20px;
+}
+
+.card-word {
+    width: 60px;
+    height: 60px;
+    margin: 0px 15px 0px 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.p1-table-name,
+.p2-table-name,
+.p3-table-name,
+.p4-table-name {
+    flex: 1;
+    height: 60px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 300;
+}

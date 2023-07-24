@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    <style>
+        html {
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+        }
+
+        body {
+            width: 80vw;
+            font-family: 'Outfit';
+            font-size: 20px;
+        }
+
+        .button {
+            background-color: rgb(182, 168, 157);
+            height: 50px;
+            width: 100px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            border: none;
+            font-family: 'Outfit';
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.15s;
+        }
+
+        .button:active {
+            background-color: rgb(219, 192, 173)
+        }
+
+        .table {
+            background-color: #F5E1B7;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+        }
+
+        .date {
+            margin-left: 22px;
+        }
+
+        .row {
+            width: 100%;
+            height: auto;
+            display: flex;
+            border-radius: 20px;
+        }
+
+        .player-1,
+        .player-2,
+        .player-3,
+        .player-4 {
+            height: auto;
+            margin: 0px 15px 0px 0px;
+            flex: 1;
+        }
+
+        .cards {
+            width: 60px;
+            height: 60px;
+            margin: 0px 15px 0px 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: solid 1px #DBC9A2;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .player-1,
+        .player-2,
+        .player-3,
+        .player-4 {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: solid 1px #DBC9A2;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .header {
+            /* background-color: #F5E1B7; */
+            width: 100%;
+            height: 60px;
+            display: flex;
+            border-radius: 20px;
+        }
+
+        .card-word {
+            width: 60px;
+            height: 60px;
+            margin: 0px 15px 0px 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .player-1-name,
+        .player-2-name,
+        .player-3-name,
+        .player-4-name {
+            flex: 1;
+            height: 60px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            margin-right: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="button">click</button>
+    <div class="table">
+        <p class="date">Date : 12/31/23</p>
+        <div class="header">
+            <div class="card-word">Card</div>
+            <div class="player-1-name">Player 1</div>
+            <div class="player-2-name">Player 2</div>
+            <div class="player-3-name">Player 3</div>
+            <div class="player-4-name">Player 4</div>
+        </div>
+        <div class="row">
+            <div class="cards">13</div>
+            <div class="player-1">
+                <p data-player-1>1</p>
+                <p data-player-1>1</p>
+                <p data-player-1>6</p>
+            </div>
+            <div class="player-2">
+                <p data-player-2>1</p>
+                <p data-player-2>2</p>
+                <p data-player-2>2</p>
+            </div>
+            <div class="player-3">
+                <p data-player-3>2</p>
+                <p data-player-3>1</p>
+                <p data-player-3>1</p>
+            </div>
+            <div class="player-4">
+                <p data-player-4>2</p>
+                <p data-player-4>2</p>
+                <p data-player-4>7</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const table = document.querySelector('.table');
+        const button = document.querySelector('.button');
+
+        button.addEventListener('click', () => {
+            // Create a new row
+            const newRow = document.createElement('div');
+            newRow.className = 'row';
+
+            // Create new elements for the cells and assign values
+            const cells = [
+                { player: 'player-1', values: [3, 4, 5] },
+                { player: 'player-2', values: [6, 7, 8] },
+                { player: 'player-3', values: [9, 10, 11] },
+                { player: 'player-4', values: [12, 13, 14] },
+            ];
+
+            const cardNumberDiv = document.createElement('div');
+            cardNumberDiv.textContent = '12';
+            cardNumberDiv.className = 'cards';
+            newRow.appendChild(cardNumberDiv);
+
+            cells.forEach(({ player, values }) => {
+                const playerDiv = document.createElement('div');
+                playerDiv.className = player;
+
+                values.forEach((value) => {
+                    const p = document.createElement('p');
+                    p.textContent = value;
+                    playerDiv.appendChild(p);
+                });
+
+                newRow.appendChild(playerDiv);
+            });
+
+            table.appendChild(newRow);
+        })
+    </script>
+</body>
+
+</html>
